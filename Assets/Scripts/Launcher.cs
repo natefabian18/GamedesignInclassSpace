@@ -15,28 +15,32 @@ public class Launcher : MonoBehaviourPunCallbacks//MonoBehaviour
 	private void Awake()
 	{
 		PhotonNetwork.AutomaticallySyncScene = true;
+		Connect();
 	}
 	void Start()
 	{
-		Connect();
 	}
 	void Update()
 	{
-
 	}
 
 	//photon session handling
 
-	public void Disconnect() {
+	public void Disconnect()
+	{
 		PhotonNetwork.Disconnect();
 	}
-	public void Connect() {
+	public void Connect()
+	{
+
 		isConnecting = PhotonNetwork.ConnectUsingSettings();
+
 		if (PhotonNetwork.IsConnected)
 		{
 			PhotonNetwork.JoinRandomRoom();
 		}
-		else {
+		else
+		{
 			//create room
 			PhotonNetwork.ConnectUsingSettings();
 			PhotonNetwork.GameVersion = gameVersion;
@@ -47,7 +51,8 @@ public class Launcher : MonoBehaviourPunCallbacks//MonoBehaviour
 	{
 		base.OnConnectedToMaster();
 		Debug.Log("connected to master");
-		if (isConnecting) {
+		if (isConnecting)
+		{
 			PhotonNetwork.JoinRandomRoom();
 			isConnecting = false;
 		}
