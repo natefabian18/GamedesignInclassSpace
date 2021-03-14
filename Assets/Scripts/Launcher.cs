@@ -14,11 +14,13 @@ public class Launcher : MonoBehaviourPunCallbacks//MonoBehaviour
 	private bool isConnecting;
 	private void Awake()
 	{
+		Connect();
 		PhotonNetwork.AutomaticallySyncScene = true;
+		
 	}
 	void Start()
 	{
-		Connect();
+		
 	}
 	void Update()
 	{
