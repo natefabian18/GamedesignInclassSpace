@@ -16,7 +16,6 @@ public class Launcher : MonoBehaviourPunCallbacks//MonoBehaviour
 	{
 		Connect();
 		PhotonNetwork.AutomaticallySyncScene = true;
-		Connect();
 	}
 	void Start()
 	{
