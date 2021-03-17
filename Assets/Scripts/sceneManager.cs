@@ -26,6 +26,7 @@ public class sceneManager : MonoBehaviourPunCallbacks
         //GameObject p = PhotonNetwork.Instantiate("Player", new Vector3(0,0,0));
         PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity, 0);
 
+        Debug.Log("player made");
 
         if (PhotonNetwork.IsMasterClient) {
             PhotonView view = PhotonView.Get(this);
